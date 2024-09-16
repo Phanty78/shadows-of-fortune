@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     'A hardcore, competitive web3 survival horror / RPG powered by theSonic Blockchain.',
   icons: {
-    icon: '/imageq/favicon.ico',
+    icon: '/images/favicon.ico',
   },
 }
 

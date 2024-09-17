@@ -176,7 +176,7 @@ export default function Component() {
             quality={100}
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center px-4 md:px-6">
-            <div className="w-full max-w-[800px] h-auto mb-8">
+            <div className="max-w-[600px] sd:max-w-[700px] md:max-w-[800px] h-auto mb-8">
               <Image
                 src="/images/title.png"
                 alt="Shadows of Fortune Title"
@@ -499,7 +499,7 @@ export default function Component() {
                   Young, Passionate, Innovative
                 </h3>
                 <p className="text-gray-300">
-                  Akambe Studio is a young game development company founded by
+                  Akanbe Studio is a young game development company founded by
                   two passionate individuals who share a love for coding, video
                   games, and blockchain technology. Our mission is to create
                   immersive gaming experiences that push the boundaries of
@@ -523,7 +523,7 @@ export default function Component() {
               <div className="bg-gray-700 p-6 rounded-lg shadow-lg">
                 <h4 className="text-xl font-semibold mb-4">Our Vision</h4>
                 <p className="text-gray-300 mb-4">
-                  At Akambe Studio, we believe in the power of combining
+                  At Akanbe Studio, we believe in the power of combining
                   cutting-edge technology with creative storytelling. Our goal
                   is to create games that not only entertain but also introduce
                   players to the exciting possibilities of blockchain

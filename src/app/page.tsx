@@ -25,12 +25,14 @@ import LoreSection from '../components/section/lore-section'
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [isMounted, setIsMounted] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
   useEffect(() => {
+    setIsMounted(true)
     const handleScroll = () => {
       setScrollPosition(window.scrollY)
     }
@@ -45,6 +47,10 @@ export default function Component() {
   const headerClass = `fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center justify-between z-50 transition-all duration-300 ${
     scrollPosition > 50 ? 'bg-gray-900 bg-opacity-90' : 'bg-transparent'
   }`
+
+  if (!isMounted) {
+    return null // or a loading placeholder
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100">
@@ -166,7 +172,7 @@ export default function Component() {
             src="/images/splash.png"
             alt="Shadows of Fortune Hero Image"
             fill
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
             quality={100}
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center px-4 md:px-6">

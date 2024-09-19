@@ -1,13 +1,8 @@
 'use client'
 
 import { Card, CardContent } from '@/components/ui/card'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
+import useEmblaCarousel from 'embla-carousel-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -35,8 +30,17 @@ const loreContent = [
 ]
 
 export default function LoreSection() {
+  const [emblaRef, emblaApi] = useEmblaCarousel()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('select', () => {
+        setCurrentIndex(emblaApi.selectedScrollSnap())
+      })
+    }
+  }, [emblaApi])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,13 +51,19 @@ export default function LoreSection() {
     return () => clearInterval(timer)
   }, [])
 
-  const handleSelect = useCallback(
-    (event: React.SyntheticEvent<HTMLDivElement>) => {
-      const target = event.target as HTMLDivElement
-      const index = parseInt(target.getAttribute('data-index') || '0', 10)
-      setCurrentIndex(index)
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index)
     },
-    []
+    [emblaApi]
   )
 
   return (
@@ -64,49 +74,62 @@ export default function LoreSection() {
         </h2>
         <Card className="bg-gray-800 border-gray-700 text-gray-300">
           <CardContent className="p-6">
-            <Carousel
-              className="w-full max-w-4xl mx-auto relative"
-              onSelect={handleSelect}
-            >
-              <CarouselContent>
-                {loreContent.map((item, index) => (
-                  <CarouselItem key={index} data-index={index}>
-                    <div className="flex flex-col items-center space-y-4">
-                      <div className="relative w-full">
-                        <Image
-                          src={item.image}
-                          alt={`Lore Image ${index + 1}`}
-                          width={900}
-                          height={600}
-                          className="rounded-md"
-                        />
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transition-transform duration-1000 ease-in-out ${
-                            isAnimating
-                              ? 'translate-x-full'
-                              : '-translate-x-full'
-                          }`}
-                        />
+            <div className="w-full max-w-4xl mx-auto relative">
+              <div className="overflow-hidden" ref={emblaRef}>
+                <div className="flex">
+                  {loreContent.map((item, index) => (
+                    <div key={index} className="flex-[0_0_100%] min-w-0">
+                      <div className="flex flex-col items-center space-y-4">
+                        <div className="relative w-full">
+                          <Image
+                            src={item.image}
+                            alt={`Lore Image ${index + 1}`}
+                            width={900}
+                            height={600}
+                            className="rounded-md"
+                          />
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transition-transform duration-1000 ease-in-out ${
+                              isAnimating
+                                ? 'translate-x-full'
+                                : '-translate-x-full'
+                            }`}
+                          />
+                        </div>
+                        <p className="text-center max-w-2xl text-sm md:text-base">
+                          {item.text}
+                        </p>
                       </div>
-                      <p className="text-center max-w-2xl text-sm md:text-base">
-                        {item.text}
-                      </p>
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="absolute inset-x-0 top-1/3 flex justify-between items-center -translate-y-1/2 px-4 md:px-8">
-                <CarouselPrevious className="relative left-0 md:-left-12 transition-all duration-300 hover:scale-110 text-red-500 border-red-500 border-2" />
-                <CarouselNext className="relative right-0 md:-right-12 transition-all duration-300 hover:scale-110 text-red-500 border-red-500 border-2" />
+                  ))}
+                </div>
               </div>
-            </Carousel>
+              <button
+                onClick={scrollPrev}
+                className="absolute left-0 md:-left-0 top-1/4 md:top-80 -translate-y-1/2 bg-gray-800 p-2 rounded-full transition-all duration-300 hover:scale-140 bg-transparent"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-8 md:w-24 h-8 md:h-24 text-white hover:scale-110 duration-200" />
+              </button>
+              <button
+                onClick={scrollNext}
+                className="absolute right-0 md:-right-0 top-1/4 md:top-80 -translate-y-1/2 bg-gray-800 p-2 rounded-full transition-all duration-300 hover:scale-140 bg-transparent"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-8 md:w-24 h-8 md:h-24 text-white hover:scale-110 duration-200" />
+              </button>
+            </div>
             <div className="flex justify-center mt-4 space-x-2">
               {loreContent.map((_, index) => (
-                <div
+                <button
                   key={index}
-                  className={`w-2 h-2 rounded-full ${
-                    index === currentIndex ? 'bg-white' : 'bg-gray-600'
+                  onClick={() => scrollTo(index)}
+                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                    index === currentIndex
+                      ? 'bg-white'
+                      : 'bg-gray-600 hover:bg-gray-400'
                   }`}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>

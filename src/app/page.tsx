@@ -26,9 +26,17 @@ export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [isMounted, setIsMounted] = useState(false)
+  const [isShaking, setIsShaking] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const shakeText = () => {
+    setIsShaking(true)
+    setTimeout(() => {
+      setIsShaking(false)
+    }, 1000)
   }
 
   useEffect(() => {
@@ -190,11 +198,24 @@ export default function Component() {
               A hardcore, competitive web3 survival horror / RPG powered by the
               Sonic Blockchain.
             </p>
-            <Button className="bg-red-600 hover:bg-red-700" size="lg" disabled>
+            <Button
+              className="bg-red-600 hover:bg-red-700"
+              size="lg"
+              onClick={shakeText}
+            >
               Play Now
             </Button>
             <br />
-            <p className="text-lg font-bold">Available November 1, 2024</p>
+            <p
+              id="avaible-text"
+              className={
+                isShaking
+                  ? 'text-lg font-bold animate-shake'
+                  : 'text-lg font-bold'
+              }
+            >
+              Available November 1, 2024
+            </p>
           </div>
         </section>
 

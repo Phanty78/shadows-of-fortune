@@ -2,13 +2,6 @@
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import {
@@ -27,6 +20,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import LoreSection from '../components/section/lore-section'
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -261,101 +255,7 @@ export default function Component() {
           </div>
         </section>
 
-        <section id="lore" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6 mx-auto">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
-              Immerse yourself in the history of Shadows Falls
-            </h2>
-            <div>
-              <div className="space-y-6">
-                <Card className="bg-gray-800 border-gray-700 tx text-gray-300">
-                  <CardHeader>
-                    <CardTitle>How the horror began</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>
-                      The game is set in present-day Shadows Falls, a small town
-                      deep in the mountains of Colorado. Tucked away in a remote
-                      valley, Shadows Falls was once a thriving mining town.
-                      Since the mines closed, the local economy has turned to
-                      the chemical industry, a nearby military base and a few
-                      tourist sites, forming the economic lung of the region.
-                      <br />
-                      <br /> On July 4, 2024, as the town celebrates its
-                      national holiday under a scorching sun, a major accident
-                      occurs at the main chemical plant. Thick toxic smoke
-                      engulfs the town, followed by strange fallout that spreads
-                      throughout the valley. The consequences are nightmarish:
-                      the health services, rapidly overwhelmed, struggle to cope
-                      with the influx of victims. The dead piled up by the
-                      hundreds, and lacking the means to deal with them, the
-                      corpses were left to lie in the hot sun, sometimes barely
-                      covered by a sheet.
-                      <br />
-                      <br /> Desperate calls from the inhabitants to the outside
-                      world go unanswered. Even more worryingly, despite repairs
-                      by technical teams, the telephone network and internet
-                      access remain inaccessible. Only a few local radio
-                      stations continue to broadcast, relaying a single, clear
-                      message: “Don&apos;t try to leave town, help is on the
-                      way.” In the confusion, many inhabitants chose to lock
-                      themselves in their homes with their loved ones, hoping
-                      that help would soon arrive. But on the third night after
-                      the disaster, a new hell breaks loose.
-                      <br />
-                      <br /> Abandoned corpses begin to rise, driven by an
-                      inexplicable force. Their chemically deformed bodies are
-                      barely recognizable: some are swollen, others have melted
-                      or eaten away flesh. Despite their missing limbs and
-                      gaping wounds, these grotesque beings manage to walk.
-                      Their faces are frozen in horror, reflecting the atrocious
-                      death that has overtaken them.
-                      <br />
-                      <br />
-                      These creatures no longer seem human. Deprived of
-                      consciousness, they no longer recognize anyone. All that
-                      remains in them is a primitive survival instinct, driving
-                      them to blind violence. Initial contacts with the
-                      survivors quickly turn into scenes of chaos and terror.
-                      <br />
-                      <br />
-                      From this fateful day, few will survive, and you are one
-                      of them.
-                      <br />
-                      <br /> Welcome to Shadows Falls, it&apos;s time to fight
-                      or die.
-                    </p>
-                    <Carousel className="w-full max-w-2xl  mx-auto">
-                      <CarouselContent>
-                        {[...Array(5)].map((_, index) => (
-                          <CarouselItem key={index}>
-                            <div className="p-1">
-                              <Card>
-                                <CardContent className="flex aspect-video items-center justify-center p-6">
-                                  <Image
-                                    src={`/images/slider/game-image-${
-                                      index + 1
-                                    }.png`}
-                                    alt={`Game Image ${index + 1}`}
-                                    width={800}
-                                    height={600}
-                                    className="rounded-md"
-                                  />
-                                </CardContent>
-                              </Card>
-                            </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
-                    </Carousel>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
+        <LoreSection />
 
         <section
           id="characters"

@@ -9,7 +9,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const loreContent = [
   {
@@ -47,6 +47,15 @@ export default function LoreSection() {
     return () => clearInterval(timer)
   }, [])
 
+  const handleSelect = useCallback(
+    (event: React.SyntheticEvent<HTMLDivElement>) => {
+      const target = event.target as HTMLDivElement
+      const index = parseInt(target.getAttribute('data-index') || '0', 10)
+      setCurrentIndex(index)
+    },
+    []
+  )
+
   return (
     <section id="lore" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6 mx-auto">
@@ -57,18 +66,18 @@ export default function LoreSection() {
           <CardContent className="p-6">
             <Carousel
               className="w-full max-w-4xl mx-auto relative"
-              onSelect={(index) => setCurrentIndex(index)}
+              onSelect={handleSelect}
             >
               <CarouselContent>
                 {loreContent.map((item, index) => (
-                  <CarouselItem key={index}>
+                  <CarouselItem key={index} data-index={index}>
                     <div className="flex flex-col items-center space-y-4">
                       <div className="relative w-full">
                         <Image
                           src={item.image}
                           alt={`Lore Image ${index + 1}`}
                           width={900}
-                          height={650}
+                          height={600}
                           className="rounded-md"
                         />
                         <div

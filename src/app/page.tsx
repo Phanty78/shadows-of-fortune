@@ -4,22 +4,11 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import {
-  Blocks,
-  Code,
-  Coins,
-  Gamepad,
-  Gamepad2,
-  Gem,
-  Link2,
-  Menu,
-  Skull,
-  Users,
-  X,
-} from 'lucide-react'
+import { Blocks, Code, Gamepad, Menu, Skull, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import FeaturesSection from '../components/section/features-section'
 import LoreSection from '../components/section/lore-section'
 
 export default function Component() {
@@ -47,10 +36,29 @@ export default function Component() {
 
     window.addEventListener('scroll', handleScroll)
 
+    // Add smooth scrolling behavior to the HTML element
+    document.documentElement.style.scrollBehavior = 'smooth'
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      // Remove smooth scrolling behavior when component unmounts
+      document.documentElement.style.scrollBehavior = ''
     }
   }, [])
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault()
+    const target = document.querySelector(href)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (isMenuOpen) {
+      toggleMenu()
+    }
+  }
 
   const headerClass = `fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center justify-between z-50 transition-all duration-300 ${
     scrollPosition > 50 ? 'bg-gray-900 bg-opacity-90' : 'bg-transparent'
@@ -68,48 +76,63 @@ export default function Component() {
           <span className="text-lg font-bold">Shadows of Fortune</span>
         </Link>
         <nav className="hidden md:flex gap-4 sm:gap-6">
-          <Link
+          <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#features"
+            onClick={(e) => handleLinkClick(e, '#features')}
           >
             Features
-          </Link>
-          <Link
+          </a>
+          <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#lore"
+            onClick={(e) => handleLinkClick(e, '#lore')}
           >
             Lore
-          </Link>
-          <Link
+          </a>
+          <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#characters"
+            onClick={(e) => handleLinkClick(e, '#characters')}
           >
             Characters
-          </Link>
-          <Link
+          </a>
+          <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#blockchain"
+            onClick={(e) => handleLinkClick(e, '#blockchain')}
           >
             Blockchain
-          </Link>
+          </a>
           <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="https://docs.shadowsoffortune.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Docs
+          </Link>
+          <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#studio"
+            onClick={(e) => handleLinkClick(e, '#studio')}
           >
             Studio
-          </Link>
-          <Link
+          </a>
+          <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#about"
+            onClick={(e) => handleLinkClick(e, '#about')}
           >
             About
-          </Link>
-          <Link
+          </a>
+          <a
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#contact"
+            onClick={(e) => handleLinkClick(e, '#contact')}
           >
             Contact
-          </Link>
+          </a>
         </nav>
         <button className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? (
@@ -122,55 +145,64 @@ export default function Component() {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-90 z-40 md:hidden">
           <div className="flex flex-col items-center justify-center h-full">
-            <Link
+            <a
               className="text-xl font-medium py-2"
               href="#features"
-              onClick={toggleMenu}
+              onClick={(e) => handleLinkClick(e, '#features')}
             >
               Features
-            </Link>
-            <Link
+            </a>
+            <a
               className="text-xl font-medium py-2"
               href="#lore"
-              onClick={toggleMenu}
+              onClick={(e) => handleLinkClick(e, '#lore')}
             >
               Lore
-            </Link>
-            <Link
+            </a>
+            <a
               className="text-xl font-medium py-2"
               href="#characters"
-              onClick={toggleMenu}
+              onClick={(e) => handleLinkClick(e, '#characters')}
             >
               Characters
-            </Link>
-            <Link
+            </a>
+            <a
               className="text-xl font-medium py-2"
               href="#blockchain"
-              onClick={toggleMenu}
+              onClick={(e) => handleLinkClick(e, '#blockchain')}
             >
               Blockchain
-            </Link>
+            </a>
             <Link
+              className="text-xl font-medium py-2"
+              href="https://docs.shadowsoffortune.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={toggleMenu}
+            >
+              Docs
+            </Link>
+            <a
               className="text-xl font-medium py-2"
               href="#studio"
-              onClick={toggleMenu}
+              onClick={(e) => handleLinkClick(e, '#studio')}
             >
               Studio
-            </Link>
-            <Link
+            </a>
+            <a
               className="text-xl font-medium py-2"
               href="#about"
-              onClick={toggleMenu}
+              onClick={(e) => handleLinkClick(e, '#about')}
             >
               About
-            </Link>
-            <Link
+            </a>
+            <a
               className="text-xl font-medium py-2"
               href="#contact"
-              onClick={toggleMenu}
+              onClick={(e) => handleLinkClick(e, '#contact')}
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       )}
@@ -219,68 +251,7 @@ export default function Component() {
           </div>
         </section>
 
-        <section
-          id="features"
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-800"
-        >
-          <div className="container px-4 md:px-6 mx-auto">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
-              Game Features
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-              <Card className="bg-gray-700 text-gray-300">
-                <CardHeader>
-                  <Users className="w-8 h-8 mb-2 text-red-500" />
-                  <CardTitle>Multiplayer Experience</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  Compete with players from around the world in the corrupt town
-                  of Shadows Falls.
-                </CardContent>
-              </Card>
-              <Card className="bg-gray-700 text-gray-300">
-                <CardHeader>
-                  <Gamepad2 className="w-8 h-8 mb-2 text-red-500" />
-                  <CardTitle>Immersive Gameplay</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  Engage in intense and hardcore survival-horror scenarios with
-                  RPG elements for character progression.
-                </CardContent>
-              </Card>
-              <Card className="bg-gray-700 text-gray-300">
-                <CardHeader>
-                  <Link2 className="w-8 h-8 mb-2 text-red-500" />
-                  <CardTitle>Blockchain Integration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  Utilize Sonic blockchain technology for secure in-game
-                  transactions and unique item ownership.
-                </CardContent>
-              </Card>
-              <Card className="bg-gray-700 text-gray-300">
-                <CardHeader>
-                  <Gem className="w-8 h-8 mb-2 text-red-500" />
-                  <CardTitle>Exploration and market</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  Find or trade rare and powerful equipment and become the
-                  ultimate survivor.
-                </CardContent>
-              </Card>
-              <Card className="bg-gray-700 text-gray-300">
-                <CardHeader>
-                  <Coins className="w-8 h-8 mb-2 text-red-500" />
-                  <CardTitle>Competitive game and rewards</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  A leaderboard shows your position in the survivor ranking at
-                  all times. The best of each season will win incredible prizes!
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <FeaturesSection />
 
         <LoreSection />
 

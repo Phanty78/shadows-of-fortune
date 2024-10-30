@@ -1,5 +1,6 @@
 'use client'
 
+import RoadmapSection from '@/components/section/roadmap-section'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -96,6 +97,13 @@ export default function Component() {
           >
             Blockchain
           </a>
+          <a
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#roadmap"
+            onClick={(e) => handleLinkClick(e, '#roadmap')}
+          >
+            Roadmap
+          </a>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
             href="https://docs.shadowsoffortune.com"
@@ -164,6 +172,13 @@ export default function Component() {
               onClick={(e) => handleLinkClick(e, '#blockchain')}
             >
               Blockchain
+            </a>
+            <a
+              className="text-xl font-medium py-2"
+              href="#roadmap"
+              onClick={(e) => handleLinkClick(e, '#roadmap')}
+            >
+              Roadmap
             </a>
             <Link
               className="text-xl font-medium py-2"
@@ -370,10 +385,9 @@ export default function Component() {
           </div>
         </section>
 
-        <section
-          id="studio"
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-800"
-        >
+        <RoadmapSection />
+
+        <section id="studio" className="w-full py-12 md:py-24 lg:py-32 ">
           <div className="container px-4 md:px-6 mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
               Meet Akanbe Studio
@@ -422,7 +436,10 @@ export default function Component() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+        <section
+          id="about"
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-800"
+        >
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -450,10 +467,7 @@ export default function Component() {
           </div>
         </section>
 
-        <section
-          id="contact"
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-800"
-        >
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
               Contact Us
@@ -527,16 +541,16 @@ export default function Component() {
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link
+            href="/terms-of-service"
             className="text-xs hover:underline underline-offset-4 text-gray-400"
-            href="#"
           >
             Terms of Service
           </Link>
           <Link
+            href="/privacy-policy"
             className="text-xs hover:underline underline-offset-4 text-gray-400"
-            href="#"
           >
-            Privacy
+            Privacy Policy
           </Link>
         </nav>
       </footer>

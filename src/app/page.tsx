@@ -15,17 +15,9 @@ export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [isMounted, setIsMounted] = useState(false)
-  const [isShaking, setIsShaking] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
-  }
-
-  const shakeText = () => {
-    setIsShaking(true)
-    setTimeout(() => {
-      setIsShaking(false)
-    }, 1000)
   }
 
   useEffect(() => {
@@ -231,22 +223,17 @@ export default function Component() {
               Sonic Blockchain.
             </p>
             <Button
-              className="bg-red-600 hover:bg-red-700"
+              className="bg-red-600 hover:bg-red-700 p-8 text-2xl font-bold"
               size="lg"
-              onClick={shakeText}
-            >
-              Play Now
-            </Button>
-            <br />
-            <p
-              id="avaible-text"
-              className={
-                isShaking
-                  ? 'text-lg font-bold animate-shake'
-                  : 'text-lg font-bold'
+              onClick={() =>
+                (window.location.href = 'https://testnet.shadowsoffortune.com/')
               }
             >
-              Available November 1, 2024
+              Access the Closed Beta
+            </Button>
+            <br />
+            <p id="avaible-text">
+              Follow us to make sure you don&apos;t miss the Open Beta!
             </p>
           </div>
         </section>

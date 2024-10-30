@@ -95,7 +95,7 @@ export default function RoadmapSection() {
                 <Card className="ml-16 bg-gray-700 border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/20">
                   <CardHeader className="flex flex-row items-center gap-4 bg-gray-800 border-b border-gray-600">
                     <div className="grid gap-1 flex-1">
-                      <CardTitle className="text-xl text-red-500">
+                      <CardTitle className="text-xl text-red-600">
                         {item.title}
                       </CardTitle>
                       <div className="flex items-center gap-2">
@@ -110,7 +110,7 @@ export default function RoadmapSection() {
                     </div>
                     <div className="flex items-center gap-2 bg-gray-700 px-3 py-1 rounded-full">
                       {getStatusIcon(item.status)}
-                      <span className="text-sm capitalize font-medium text-gray-400">
+                      <span className="text-sm capitalize font-medium text-white">
                         {item.status}
                       </span>
                     </div>
@@ -120,7 +120,7 @@ export default function RoadmapSection() {
                       {item.description.map((desc, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <span
-                            className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"
+                            className="w-2 h-2 bg-red-600 rounded-full mt-2 flex-shrink-0"
                             aria-hidden="true"
                           />
                           <span className="text-gray-300">{desc}</span>

@@ -27,7 +27,7 @@ export default function FeaturesSection() {
               </div>
 
               <Image
-                src="/images/play-and-earn.png"
+                src="/images/play-and-earn.webp"
                 alt="Play and earn"
                 width={600}
                 height={400}
@@ -52,7 +52,7 @@ export default function FeaturesSection() {
                 </CardContent>
               </div>
               <Image
-                src="/images/chain.png"
+                src="/images/chain.webp"
                 alt="Play and earn"
                 width={600}
                 height={400}
@@ -81,7 +81,7 @@ export default function FeaturesSection() {
               </div>
 
               <Image
-                src="/images/map.png"
+                src="/images/map.webp"
                 alt="game map"
                 width={600}
                 height={400}

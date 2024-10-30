@@ -8,23 +8,23 @@ import { useCallback, useEffect, useState } from 'react'
 
 const loreContent = [
   {
-    image: '/images/slider/game-image-1.png',
+    image: '/images/slider/game-image-1.webp',
     text: 'The game is set in present-day Shadows Falls, a small town deep in the mountains of Colorado. Tucked away in a remote valley, Shadows Falls was once a thriving mining town. Since the mines closed, the local economy has turned to the chemical industry, a nearby military base and a few tourist sites, forming the economic lung of the region.',
   },
   {
-    image: '/images/slider/game-image-2.png',
+    image: '/images/slider/game-image-2.webp',
     text: 'On July 4, 2024, as the town celebrates its national holiday under a scorching sun, a major accident occurs at the main chemical plant. Thick toxic smoke engulfs the town, followed by strange fallout that spreads throughout the valley. The consequences are nightmarish: the health services, rapidly overwhelmed, struggle to cope with the influx of victims. The dead piled up by the hundreds, and lacking the means to deal with them, the corpses were left to lie in the hot sun, sometimes barely covered by a sheet.',
   },
   {
-    image: '/images/slider/game-image-3.png',
+    image: '/images/slider/game-image-3.webp',
     text: 'Desperate calls from the inhabitants to the outside world go unanswered. Even more worryingly, despite repairs by technical teams, the telephone network and internet access remain inaccessible. Only a few local radio stations continue to broadcast, relaying a single, clear message: "Don\'t try to leave town, help is on the way." In the confusion, many inhabitants chose to lock themselves in their homes with their loved ones, hoping that help would soon arrive. But on the third night after the disaster, a new hell breaks loose.',
   },
   {
-    image: '/images/slider/game-image-4.png',
+    image: '/images/slider/game-image-4.webp',
     text: 'Abandoned corpses begin to rise, driven by an inexplicable force. Their chemically deformed bodies are barely recognizable: some are swollen, others have melted or eaten away flesh. Despite their missing limbs and gaping wounds, these grotesque beings manage to walk. Their faces are frozen in horror, reflecting the atrocious death that has overtaken them. These creatures no longer seem human. Deprived of consciousness, they no longer recognize anyone. All that remains in them is a primitive survival instinct, driving them to blind violence. Initial contacts with the survivors quickly turn into scenes of chaos and terror.',
   },
   {
-    image: '/images/slider/game-image-5.png',
+    image: '/images/slider/game-image-5.webp',
     text: "From this fateful day, few will survive, and you are one of them. Welcome to Shadows Falls, it's time to fight or die.",
   },
 ]

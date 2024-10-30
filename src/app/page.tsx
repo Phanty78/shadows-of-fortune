@@ -216,7 +216,7 @@ export default function Component() {
       <main className="flex-1">
         <section className="w-full h-screen relative flex items-center justify-center">
           <Image
-            src="/images/splash.png"
+            src="/images/splash.webp"
             alt="Shadows of Fortune Hero Image"
             fill
             style={{ objectFit: 'cover' }}
@@ -225,7 +225,7 @@ export default function Component() {
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center px-4 md:px-6">
             <div className="max-w-[600px] sd:max-w-[700px] md:max-w-[800px] h-auto mb-8">
               <Image
-                src="/images/title.png"
+                src="/images/title.webp"
                 alt="Shadows of Fortune Title"
                 width={800}
                 height={267}
@@ -271,7 +271,7 @@ export default function Component() {
                   <div className="relative w-full h-auto">
                     {' '}
                     <Image
-                      src="/images/survivalist.png"
+                      src="/images/survivalist.webp"
                       alt="Survivalist"
                       width={300}
                       height={400}
@@ -291,7 +291,7 @@ export default function Component() {
                   <div className="relative w-full h-auto">
                     {' '}
                     <Image
-                      src="/images/ghost.png"
+                      src="/images/ghost.webp"
                       alt="Shadow Walker"
                       width={300}
                       height={400}
@@ -312,7 +312,7 @@ export default function Component() {
                   <div className="relative w-full h-auto">
                     {' '}
                     <Image
-                      src="/images/veteran.png"
+                      src="/images/veteran.webp"
                       alt="Veteran"
                       width={300}
                       height={400}
@@ -330,7 +330,7 @@ export default function Component() {
               <Card className="bg-gray-700 border-gray-600 text-gray-300">
                 <CardHeader>
                   <Image
-                    src="/images/cop.png"
+                    src="/images/cop.webp"
                     alt="Enforcer"
                     width={300}
                     height={400}

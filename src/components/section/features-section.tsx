@@ -53,7 +53,7 @@ export default function FeaturesSection() {
               </div>
               <Image
                 src="/images/chain.webp"
-                alt="Play and earn"
+                alt="A pc surounded by chain and lightning"
                 width={600}
                 height={400}
                 className="rounded-lg order-2 md:order-1"

@@ -110,7 +110,7 @@ export default function RoadmapSection() {
                     </div>
                     <div className="flex items-center gap-2 bg-gray-700 px-3 py-1 rounded-full">
                       {getStatusIcon(item.status)}
-                      <span className="text-sm capitalize font-medium">
+                      <span className="text-sm capitalize font-medium text-gray-400">
                         {item.status}
                       </span>
                     </div>

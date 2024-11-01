@@ -250,11 +250,11 @@ export default function Component() {
                 (window.location.href = 'https://testnet.shadowsoffortune.com/')
               }
             >
-              Access the Closed Beta
+              Access the Beta
             </Button>
             <br />
             <p id="avaible-text">
-              Follow us to make sure you don&apos;t miss the Open Beta!
+              Follow us to make sure you don&apos;t miss any news !
             </p>
           </div>
         </section>

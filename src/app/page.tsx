@@ -66,7 +66,7 @@ export default function Component() {
       <header className={headerClass}>
         <Link className="flex items-center justify-center" href="#">
           <Skull className="h-6 w-6 text-red-500 mr-2" />
-          <span className="text-lg font-bold">Shadows of Fortune</span>
+          <h1 className="text-lg font-bold">Shadows of Fortune</h1>
         </Link>
         <nav className="hidden md:flex gap-4 sm:gap-6">
           <a
@@ -134,7 +134,12 @@ export default function Component() {
             Contact
           </a>
         </nav>
-        <button className="md:hidden" onClick={toggleMenu}>
+        <button
+          className="md:hidden"
+          onClick={toggleMenu}
+          aria-label="Open Menu"
+          aria-hidden="true"
+        >
           {isMenuOpen ? (
             <X className="h-6 w-6" />
           ) : (
@@ -231,6 +236,7 @@ export default function Component() {
                 height={267}
                 layout="responsive"
                 className="w-full h-auto"
+                loading="eager"
               />
             </div>
             <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl mb-8 text-center">
@@ -244,11 +250,11 @@ export default function Component() {
                 (window.location.href = 'https://testnet.shadowsoffortune.com/')
               }
             >
-              Access the Closed Beta
+              Access the Beta
             </Button>
             <br />
             <p id="avaible-text">
-              Follow us to make sure you don&apos;t miss the Open Beta!
+              Follow us to make sure you don&apos;t miss any news !
             </p>
           </div>
         </section>
@@ -272,7 +278,7 @@ export default function Component() {
                     {' '}
                     <Image
                       src="/images/survivalist.webp"
-                      alt="Survivalist"
+                      alt=""
                       width={300}
                       height={400}
                       className="rounded-lg"
@@ -292,7 +298,7 @@ export default function Component() {
                     {' '}
                     <Image
                       src="/images/ghost.webp"
-                      alt="Shadow Walker"
+                      alt=""
                       width={300}
                       height={400}
                       className="rounded-lg"
@@ -300,7 +306,7 @@ export default function Component() {
                     />
                   </div>
 
-                  <CardTitle className="mt-4">The Shadow Walker</CardTitle>
+                  <CardTitle className="mt-4">The Vagabond</CardTitle>
                 </CardHeader>
                 <CardContent>
                   A mysterious figure skilled in stealth and subterfuge,
@@ -313,7 +319,7 @@ export default function Component() {
                     {' '}
                     <Image
                       src="/images/veteran.webp"
-                      alt="Veteran"
+                      alt=""
                       width={300}
                       height={400}
                       className="rounded-lg"
@@ -331,7 +337,7 @@ export default function Component() {
                 <CardHeader>
                   <Image
                     src="/images/cop.webp"
-                    alt="Enforcer"
+                    alt=""
                     width={300}
                     height={400}
                     sizes="(100vw - 2rem) 100vw"

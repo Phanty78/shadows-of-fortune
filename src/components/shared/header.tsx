@@ -49,36 +49,36 @@ export default function Header() {
         <nav className="hidden md:flex gap-4 sm:gap-6">
           <Link
             href="/landing#mint"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg font-medium hover:underline underline-offset-4"
           >
             Mint
           </Link>
           <Link
             href="/landing#loot"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg  font-medium hover:underline underline-offset-4"
           >
             Loot
           </Link>
           <Link
             href="/landing#explore"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg font-medium hover:underline underline-offset-4"
           >
             Explore
           </Link>
           <Link
             href="/landing#leaderboard"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg  font-medium hover:underline underline-offset-4"
           >
             Leaderboard
           </Link>
           <Link
             href="/characters"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg  font-medium hover:underline underline-offset-4"
           >
             Characters
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg  font-medium hover:underline underline-offset-4"
             href="https://docs.shadowsoffortune.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -86,7 +86,7 @@ export default function Header() {
             Docs
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg font-medium hover:underline underline-offset-4"
             href="/contact"
             target="_blank"
             rel="noopener noreferrer"
@@ -94,7 +94,7 @@ export default function Header() {
             Contact
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-2"
+            className="text-lg  font-medium hover:underline underline-offset-2"
             href="https://x.com/ShadowsOFortune"
             target="_blank"
             rel="noopener noreferrer"
@@ -102,7 +102,7 @@ export default function Header() {
             <Twitter size={20} />
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-"
+            className="text-lg  font-medium hover:underline underline-offset-"
             href="https://t.me/shadowsoffortune/1"
             target="_blank"
             rel="noopener noreferrer"

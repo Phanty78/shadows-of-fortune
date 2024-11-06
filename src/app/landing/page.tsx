@@ -5,8 +5,29 @@ import Header from '@/components/shared/header'
 import { Button } from '@/components/ui/button'
 import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Landing() {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    // Vérifie si le code s'exécute côté client
+    if (typeof window !== 'undefined') {
+      // <-- Ajout de cette condition
+      const handleScroll = () => {
+        setScrollY(window.scrollY)
+      }
+
+      // Ajoute l'écouteur de défilement
+      window.addEventListener('scroll', handleScroll)
+
+      // Nettoyage de l'écouteur pour éviter les fuites de mémoire
+      return () => {
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+  }, [])
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100">
       <Header />

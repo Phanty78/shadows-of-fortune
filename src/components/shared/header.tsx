@@ -1,6 +1,6 @@
 'use client'
 
-import { Menu, Skull, X } from 'lucide-react'
+import { Menu, Send, Skull, Twitter, X } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -93,6 +93,22 @@ export default function Header() {
           >
             Contact
           </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-2"
+            href="https://x.com/ShadowsOFortune"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Twitter size={20} />
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-"
+            href="https://t.me/shadowsoffortune/1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Send size={20} />
+          </Link>
         </nav>
         <button
           className="md:hidden"
@@ -144,6 +160,22 @@ export default function Header() {
               rel="noopener noreferrer"
             >
               Contact
+            </Link>
+            <Link
+              className="text-xl font-medium py-2"
+              href="https://x.com/ShadowsOFortune"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twitter size={20} />
+            </Link>
+            <Link
+              className="text-xl font-medium py-2"
+              href="https://t.me/shadowsoffortune/1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Send size={20} />
             </Link>
           </div>
         </div>

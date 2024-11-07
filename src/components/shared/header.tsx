@@ -78,6 +78,12 @@ export default function Header() {
             Characters
           </Link>
           <Link
+            href="/roadmap"
+            className="text-lg  font-medium hover:underline underline-offset-4"
+          >
+            Roadmap
+          </Link>
+          <Link
             className="text-lg  font-medium hover:underline underline-offset-4"
             href="https://docs.shadowsoffortune.com"
             target="_blank"
@@ -144,6 +150,9 @@ export default function Header() {
             </Link>
             <Link href="/characters" className="text-xl font-medium py-2">
               Characters
+            </Link>
+            <Link href="/roadmap" className="text-xl font-medium py-2">
+              Roadmap
             </Link>
             <Link
               className="text-xl font-medium py-2"

@@ -27,6 +27,7 @@ export default function Footer() {
             target="_blank"
             aria-label="X"
             className="text-gray-400 hover:text-white"
+            rel="noopener noreferrer"
           >
             <Twitter size={20} />
           </Link>
@@ -35,6 +36,7 @@ export default function Footer() {
             target="_blank"
             aria-label="Telegram"
             className="text-gray-400 hover:text-white"
+            rel="noopener noreferrer"
           >
             <Send size={20} />
           </Link>
@@ -42,6 +44,7 @@ export default function Footer() {
             href="https://testnet.shadowsoffortune.com/"
             aria-label="DApp"
             className="text-gray-400 hover:text-white"
+            rel="noopener noreferrer"
           >
             <ExternalLink size={20} />
           </Link>

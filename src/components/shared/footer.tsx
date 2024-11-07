@@ -23,25 +23,28 @@ export default function Footer() {
         </Link>
         <div className="flex items-center gap-4">
           <Link
-            href="https://x.com/your-profile"
+            href="https://x.com/ShadowsOFortune"
             target="_blank"
             aria-label="X"
             className="text-gray-400 hover:text-white"
+            rel="noopener noreferrer"
           >
             <Twitter size={20} />
           </Link>
           <Link
-            href="https://t.me/your-telegram"
+            href="https://t.me/shadowsoffortune/1"
             target="_blank"
             aria-label="Telegram"
             className="text-gray-400 hover:text-white"
+            rel="noopener noreferrer"
           >
             <Send size={20} />
           </Link>
           <Link
-            href="/dapp"
+            href="https://testnet.shadowsoffortune.com/"
             aria-label="DApp"
             className="text-gray-400 hover:text-white"
+            rel="noopener noreferrer"
           >
             <ExternalLink size={20} />
           </Link>

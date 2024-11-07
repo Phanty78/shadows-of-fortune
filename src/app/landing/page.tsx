@@ -48,7 +48,7 @@ export default function Landing() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black" />
           <div className="relative z-20 text-center">
-            <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl mb-8 text-center">
+            <p className="mx-auto max-w-[700px] text-2xl color-white md:text-xl mb-8 text-center font-bold">
               A hardcore, competitive web3 survival horror / RPG powered by the
               Sonic Blockchain.
             </p>
@@ -63,7 +63,7 @@ export default function Landing() {
             </Button>
             <br />
             <br />
-            <p id="avaible-text">
+            <p id="avaible-text" className="text-center text-xl color-white">
               Follow us to make sure you don&apos;t miss any news !
             </p>
           </div>

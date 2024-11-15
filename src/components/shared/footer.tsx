@@ -1,4 +1,5 @@
 import { ExternalLink, Send, Twitter } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -44,6 +45,19 @@ export default function Footer() {
             className="text-gray-400 hover:text-white"
           >
             <ExternalLink size={20} />
+          </Link>
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="https://discord.gg/mSkShCrAy2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/discord-brands-solid-footer.svg"
+              alt="Discord"
+              width={20}
+              height={20}
+            />
           </Link>
         </div>
       </nav>

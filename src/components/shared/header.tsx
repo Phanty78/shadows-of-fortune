@@ -50,36 +50,42 @@ export default function Header() {
         <nav className="hidden md:flex gap-4 sm:gap-6">
           <Link
             href="/landing#mint"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg font-medium hover:underline underline-offset-4"
           >
             Mint
           </Link>
           <Link
             href="/landing#loot"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg  font-medium hover:underline underline-offset-4"
           >
             Loot
           </Link>
           <Link
             href="/landing#explore"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg font-medium hover:underline underline-offset-4"
           >
             Explore
           </Link>
           <Link
             href="/landing#leaderboard"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg  font-medium hover:underline underline-offset-4"
           >
             Leaderboard
           </Link>
           <Link
             href="/characters"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg  font-medium hover:underline underline-offset-4"
           >
             Characters
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            href="/roadmap"
+            className="text-lg  font-medium hover:underline underline-offset-4"
+          >
+            Roadmap
+          </Link>
+          <Link
+            className="text-lg  font-medium hover:underline underline-offset-4"
             href="https://docs.shadowsoffortune.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -87,7 +93,7 @@ export default function Header() {
             Docs
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-lg font-medium hover:underline underline-offset-4"
             href="/contact"
             target="_blank"
             rel="noopener noreferrer"
@@ -158,6 +164,9 @@ export default function Header() {
             </Link>
             <Link href="/characters" className="text-xl font-medium py-2">
               Characters
+            </Link>
+            <Link href="/roadmap" className="text-xl font-medium py-2">
+              Roadmap
             </Link>
             <Link
               className="text-xl font-medium py-2"

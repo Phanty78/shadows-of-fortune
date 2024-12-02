@@ -82,13 +82,13 @@ export default function Header() {
             href="/roadmap"
             className="text-lg  font-medium hover:underline underline-offset-4"
           >
-            Changelog
+            Roadmap
           </Link>
           <Link
             href="/changelog"
             className="text-lg  font-medium hover:underline underline-offset-4"
           >
-            Roadmap
+            Changelog
           </Link>
           <Link
             className="text-lg  font-medium hover:underline underline-offset-4"

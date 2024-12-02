@@ -47,7 +47,7 @@ export default function Landing() {
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black" />
-          <div className="relative z-20 text-center">
+          <div className="relative z-20 text-center flex flex-col items-center justify-center">
             <p className="mx-auto max-w-[700px] text-2xl color-white md:text-xl mb-8 text-center font-bold">
               A hardcore, competitive web3 survival horror / RPG powered by the
               Sonic Blockchain.
@@ -66,6 +66,17 @@ export default function Landing() {
             <p id="avaible-text" className="text-center text-xl color-white">
               Follow us to make sure you don&apos;t miss any news !
             </p>
+
+            <div className="mt-6 sm:w-full md:w-3/4 aspect-video flex justify-center border border-gray-300">
+              <iframe
+                src="https://www.youtube.com/embed/6-KzmZvYM_s?si=sau6_GOXRpznjQjl"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
             <ChevronDown size={32} />

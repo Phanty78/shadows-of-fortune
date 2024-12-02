@@ -96,7 +96,7 @@ export default function ChangelogSection() {
     },
     {
       version: 'v0.1 (Testnet)',
-      date: 'November 28, 2024',
+      date: 'November 11, 2024',
       changes: [
         {
           type: 'feature',

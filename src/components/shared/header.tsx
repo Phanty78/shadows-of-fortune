@@ -47,7 +47,7 @@ export default function Header() {
           <Skull className="h-6 w-6 text-red-500 mr-2" />
           <h1 className="text-lg font-bold">Shadows of Fortune</h1>
         </Link>
-        <nav className="hidden md:flex gap-4 sm:gap-6">
+        <nav className="hidden lg:flex gap-4 sm:gap-6">
           <Link
             href="/landing#mint"
             className="text-lg font-medium hover:underline underline-offset-4"
@@ -137,7 +137,7 @@ export default function Header() {
           </Link>
         </nav>
         <button
-          className="md:hidden"
+          className="lg:hidden"
           onClick={toggleMenu}
           aria-label="Open Menu"
           aria-hidden="true"
@@ -151,7 +151,7 @@ export default function Header() {
       </header>
 
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-90 z-40 md:hidden">
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-90 z-40 lg:hidden">
           <div className="flex flex-col items-center justify-center h-full">
             <Link href="/landing#mint" className="text-xl font-medium py-2">
               Mint

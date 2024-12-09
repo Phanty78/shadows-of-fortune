@@ -15,8 +15,7 @@ export default function VideoPlaceholder() {
           alt="Shadows of Fortune video placeholder"
           width={480}
           height={360}
-          className="absolute top-0 left-0 w-full h-full cursor-pointer"
-          objectFit="cover"
+          className="absolute top-0 left-0 w-full h-full cursor-pointer object-cover"
           onClick={loadiframe}
         />
       )}

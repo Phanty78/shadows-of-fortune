@@ -142,8 +142,7 @@ export default function Landing() {
                   alt="Rare items and weapons"
                   width={500}
                   height={500}
-                  objectFit="cover"
-                  className="transform hover:scale-105 transition-transform duration-500"
+                  className="transform hover:scale-105 transition-transform duration-500 object-cover"
                 />
               </div>
               <div className="text-center md:text-left bg-black bg-opacity-50 p-6 rounded-lg md:w-1/2">
@@ -211,8 +210,7 @@ export default function Landing() {
                   alt="Map of Shadow Falls"
                   width={500}
                   height={500}
-                  objectFit="cover"
-                  className="transform hover:scale-105 transition-transform duration-500"
+                  className="transform hover:scale-105 transition-transform duration-500 object-cover"
                 />
               </div>
             </div>
@@ -238,8 +236,7 @@ export default function Landing() {
                   alt="Rare items and weapons"
                   width={500}
                   height={500}
-                  objectFit="cover"
-                  className="transform hover:scale-105 transition-transform duration-500"
+                  className="transform hover:scale-105 transition-transform duration-500 object-cover"
                 />
               </div>
               <div className="text-center md:text-left bg-black bg-opacity-50 p-6 rounded-lg md:w-1/2">

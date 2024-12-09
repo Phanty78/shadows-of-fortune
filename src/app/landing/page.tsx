@@ -2,6 +2,7 @@
 
 import Footer from '@/components/shared/footer'
 import Header from '@/components/shared/header'
+import VideoPlaceholder from '@/components/shared/videoplaceholder'
 import { Button } from '@/components/ui/button'
 import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
@@ -67,16 +68,7 @@ export default function Landing() {
               Follow us to make sure you don&apos;t miss any news !
             </p>
 
-            <div className="mt-6 sm:w-full md:w-3/4 aspect-video flex justify-center border border-gray-300">
-              <iframe
-                src="https://www.youtube.com/embed/6-KzmZvYM_s?si=sau6_GOXRpznjQjl"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
+            <VideoPlaceholder />
           </div>
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
             <ChevronDown size={32} />
